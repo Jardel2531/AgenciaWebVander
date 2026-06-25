@@ -122,4 +122,6 @@
         function enviarWhatsApp() {
             const numero = "55329998575472";
             const mensagem = "Olá! Gostaria de falar sobre um projeto.";
-            window.location.href = `
+            window.location.href = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    }
+</script>
