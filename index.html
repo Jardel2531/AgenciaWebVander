@@ -92,6 +92,16 @@
             .logo { width: 80px; margin-bottom: 1.5rem; }
             .dev-image { width: 180px; }
         }
+        .dev-image {
+    width: 200px; /* Mantenha sua largura original */
+    position: relative;
+    z-index: 1;
+    display: block;
+
+    /* ADICIONE ESTAS LINHAS ABAIXO */
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
     </style>
 </head>
 <body>
