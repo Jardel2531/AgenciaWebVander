@@ -11,7 +11,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding-top: 50px; 
+            padding-top: 30px; /* Reduzi um pouco para subir tudo */
             min-height: 100vh;
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
@@ -22,7 +22,7 @@
 
         .logo {
             width: 100px;
-            margin-bottom: 3rem; 
+            margin-bottom: 2rem; 
             filter: drop-shadow(0 0 15px #00f2ff);
         }
 
@@ -44,7 +44,6 @@
             border: 1px solid #30363d;
             transition: 0.3s;
             cursor: pointer;
-            line-height: 1.4;
             font-size: 16px;
         }
 
@@ -53,47 +52,45 @@
             border-color: #00f2ff;
         }
 
-        /* Estilo do novo slogan */
         .slogan {
             color: #ffffff;
             font-size: 0.9rem;
             text-align: center;
-            margin: 30px 20px;
+            margin: 20px 20px;
             font-style: italic;
             opacity: 0.8;
-            letter-spacing: 0.5px;
             text-transform: uppercase;
         }
 
         .dev-wrapper {
             position: relative;
-            margin-top: 10px;
+            margin-top: -10px; /* Puxa a imagem para cima */
+            display: flex;
+            justify-content: center;
         }
 
         .dev-glow {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 150px;
-            height: 150px;
+            top: 60%; /* Centraliza o brilho na altura do peito */
+            width: 120px;
+            height: 120px;
             background: #00f2ff;
-            filter: blur(50px);
-            opacity: 0.3;
-            transform: translate(-50%, -50%);
+            filter: blur(60px); /* Aumentei o blur para suavizar */
+            opacity: 0.2;
             z-index: 0;
+            pointer-events: none; /* Impede que o brilho interfira no toque */
         }
 
         .dev-image {
             width: 200px;
             position: relative;
             z-index: 1;
+            display: block; /* Remove espaços extras de linha */
         }
 
         @media (max-width: 480px) {
-            .logo { width: 80px; }
-            .btn { padding: 14px; font-size: 14px; }
-            .dev-image { width: 160px; }
-            .slogan { font-size: 0.8rem; }
+            .logo { width: 80px; margin-bottom: 1.5rem; }
+            .dev-image { width: 180px; }
         }
     </style>
 </head>
@@ -105,7 +102,6 @@
         <a href="https://webvanderagencia.vercel.app/" target="_blank" class="btn">
             Conhecer Projetos<br>(Webvander Studio)
         </a>
-        
         <a href="#" onclick="enviarWhatsApp()" class="btn">
             Quero falar com o Dev
         </a>
@@ -123,5 +119,7 @@
             const numero = "5532998698926";
             const mensagem = "Olá! Gostaria de falar sobre um projeto.";
             window.location.href = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-    }
-</script>
+        }
+    </script>
+</body>
+</html>
