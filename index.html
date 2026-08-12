@@ -11,7 +11,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding-top: 30px; /* Reduzi um pouco para subir tudo */
+            padding-top: 30px;
             min-height: 100vh;
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
@@ -42,9 +42,11 @@
             border-radius: 8px;
             background: #161b22;
             border: 1px solid #30363d;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             cursor: pointer;
             font-size: 16px;
+            display: block;
+            box-sizing: border-box;
         }
 
         .btn:hover {
@@ -52,11 +54,16 @@
             border-color: #00f2ff;
         }
 
+        .btn:active {
+            box-shadow: 0 0 30px #00f2ff !important;
+            transform: scale(0.98);
+        }
+
         .slogan {
             color: #ffffff;
             font-size: 0.9rem;
             text-align: center;
-            margin: 20px 20px;
+            margin: 20px;
             font-style: italic;
             opacity: 0.8;
             text-transform: uppercase;
@@ -64,59 +71,52 @@
 
         .dev-wrapper {
             position: relative;
-            margin-top: -10px; /* Puxa a imagem para cima */
+            margin-top: -10px;
             display: flex;
             justify-content: center;
         }
 
         .dev-glow {
             position: absolute;
-            top: 60%; /* Centraliza o brilho na altura do peito */
+            top: 60%;
             width: 120px;
             height: 120px;
             background: #00f2ff;
-            filter: blur(60px); /* Aumentei o blur para suavizar */
+            filter: blur(60px);
             opacity: 0.2;
             z-index: 0;
-            pointer-events: none; /* Impede que o brilho interfira no toque */
+            pointer-events: none;
         }
 
         .dev-image {
             width: 200px;
             position: relative;
             z-index: 1;
-            display: block; /* Remove espaços extras de linha */
+            display: block;
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
 
         @media (max-width: 480px) {
-            .logo { width: 80px; margin-bottom: 1.5rem; }
-            .dev-image { width: 180px; }
+            .logo { 
+                width: 80px; 
+                margin-bottom: 1.5rem; 
+            }
+            .dev-image { 
+                width: 180px; 
+            }
         }
-        .dev-image {
-    width: 200px; /* Mantenha sua largura original */
-    position: relative;
-    z-index: 1;
-    display: block;
-
-    /* ADICIONE ESTAS LINHAS ABAIXO */
-    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-}
-        .btn:active {
-    box-shadow: 0 0 30px #00f2ff !important;
-    transform: scale(0.98); /* Dá um efeito visual de que o botão foi 'apertado' */
-}
     </style>
 </head>
 <body>
 
-    <img src="favicon-removebg-preview.webp" class="logo" alt="Logo">
+    <img src="favicon-removebg-preview.webp" class="logo" alt="Logo Webvander Studio">
 
     <div class="button-container">
-        <a href="https://webvanderagencia.vercel.app/" target="_blank" class="btn">
+        <a href="https://webvanderagencia.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">
             Conhecer Projetos<br>(Webvander Studio)
         </a>
-        <a href="#" onclick="enviarWhatsApp()" class="btn">
+        <a href="javascript:void(0)" onclick="enviarWhatsApp()" class="btn">
             Quero falar com o Dev
         </a>
     </div>
